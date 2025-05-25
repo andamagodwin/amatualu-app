@@ -1,8 +1,11 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useAuthStore } from '../../store/auth.store';
 
 export default function ProfilePage() {
+  const { user, signOut } = useAuthStore();
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView className="flex-1">
@@ -10,8 +13,8 @@ export default function ProfilePage() {
           {/* Profile Header */}
           <View className="items-center">
             <View className="w-24 h-24 bg-gray-200 rounded-full" />
-            <Text className="mt-4 text-xl font-bold text-gray-800">John Doe</Text>
-            <Text className="text-gray-600">john.doe@example.com</Text>
+            <Text className="mt-4 text-xl font-bold text-gray-800">{user?.name}</Text>
+            <Text className="text-gray-600">{user?.email}</Text>
           </View>
 
           {/* Profile Options */}
@@ -40,7 +43,10 @@ export default function ProfilePage() {
           </View>
 
           {/* Logout Button */}
-          <TouchableOpacity className="mt-8 p-4 bg-red-500 rounded-lg">
+          <TouchableOpacity 
+            className="mt-8 p-4 bg-red-500 rounded-lg"
+            onPress={signOut}
+          >
             <Text className="text-white text-center font-semibold">Logout</Text>
           </TouchableOpacity>
         </View>
