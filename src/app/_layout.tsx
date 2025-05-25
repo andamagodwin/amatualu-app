@@ -27,7 +27,7 @@ export default function RootLayout() {
 
   if (isLoading) {
     return (
-      <View className="flex-1 items-center justify-center bg-white">
+      <View className="flex-1 items-center justify-center bg-red-500">
         <ActivityIndicator size="large" color="#EF4444" />
       </View>
     );
