@@ -31,6 +31,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#18181b"
+      },
+      "package": "com.andama.Amatualu"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c30ee917-ffac-407f-9514-00c03f99ad8d"
       }
     }
   }
